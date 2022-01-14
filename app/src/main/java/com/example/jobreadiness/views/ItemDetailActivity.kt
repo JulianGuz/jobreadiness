@@ -71,7 +71,7 @@ class ItemDetailActivity: AppCompatActivity() {
     }
 
     private fun showErrorMessage(connectionFail: Boolean = false) {
-        var message = "not found"
+        var message = "Ningun  item dado para la categoria fue encontrado"
         if (connectionFail) {
             message = "not internet"
         }

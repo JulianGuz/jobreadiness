@@ -61,7 +61,6 @@ class ItemsActivity : AppCompatActivity(), SearchView.OnQueryTextListener{
                 val activityResponse: List<ItemDetailsResponseItem>? = call?.body()
                 runOnUiThread {
                     if (call != null && call.isSuccessful) {
-                        println("items it was succesfull")
                         activityResponse?.let { it1 ->
                             if (!activityResponse.isNullOrEmpty()) {
                                 itemCardsList.clear()
@@ -81,7 +80,7 @@ class ItemsActivity : AppCompatActivity(), SearchView.OnQueryTextListener{
     }
 
     private fun showErrorMessage(connectionFail: Boolean = false) {
-        var message = "not found"
+        var message = "Ningun  item dado para la categoria fue encontrado"
         if (connectionFail) {
             message = "not internet"
         }

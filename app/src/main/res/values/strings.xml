@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">JobReadiness</string>
+    <string name="item_details_new">new</string>
+    <string name="item_details_sold">sold</string>
+    <string name="item_details_titulo_provisional">titulo provisional</string>
+    <string name="item_details_money">$$$$$$$$$</string>
+    <string name="item_details_stock_disponible">Stock Disponible</string>
+    <string name="item_details_avaibility">1 of 2</string>
+    <string name="item_details_comprar_ahora">Comprar ahora</string>
+    <string name="item_details_descipcion">Descipcion</string>
 </resources>

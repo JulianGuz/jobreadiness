@@ -28,7 +28,7 @@
                 style="@style/baseTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="new" />
+                android:text="@string/item_details_new" />
 
             <View
                 android:layout_width="1dp"
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="sold 345" />
+                android:text="@string/item_details_sold" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
@@ -53,7 +53,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:text="titulo provisional"
+            android:text="@string/item_details_titulo_provisional"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tittleInfo" />
@@ -76,9 +76,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:textSize="23sp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="$$$$$$$$$"
+            android:text="@string/item_details_money"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/IVDetailImage" />
@@ -91,7 +92,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="Stock Disponible"
+            android:text="@string/item_details_stock_disponible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVDetailPrice" />
@@ -104,7 +105,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="1 of 2"
+            android:text="@string/item_details_avaibility"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TVDetailStock" />
@@ -117,7 +118,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="20dp"
-            android:text="Comprar ahora"
+            android:text="@string/item_details_comprar_ahora"
             app:layout_constraintTop_toBottomOf="@+id/TVDetailStockValue" />
 
         <TextView
@@ -128,7 +129,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="Descipcion"
+            android:layout_marginBottom="10dp"
+            android:text="@string/item_details_descipcion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BTNBuyNow" />

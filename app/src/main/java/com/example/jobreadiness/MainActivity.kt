@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() , SearchView.OnQueryTextListener{
         }
     }
 
-    fun makeCallCategory(searchText: String) {
+    private fun makeCallCategory(searchText: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val call: Response<ArrayList<CategorieResponse>> =
@@ -47,11 +47,9 @@ class MainActivity : AppCompatActivity() , SearchView.OnQueryTextListener{
                 val activityResponse: ArrayList<CategorieResponse>? = call.body()
                 runOnUiThread {
                     if (call.isSuccessful && !activityResponse.isNullOrEmpty()) {
-                        activityResponse?.get(0).let {
-                            println(it?.domainName)
+                        activityResponse[0].let {
                             if (!activityResponse.isNullOrEmpty()) {
-                                println("hola mundo" + it?.categoryId)
-                                it?.categoryId?.let { it1 -> makeCallHighLights(it1) }
+                                makeCallHighLights(it.categoryId)
                             }else
                                 showErrorMessage()
 
@@ -72,16 +70,13 @@ class MainActivity : AppCompatActivity() , SearchView.OnQueryTextListener{
                     ApiClient.getRetrofit().create(ProductService::class.java)
                         .getHighlight("MLA", categoryId)
 
-
                 val activityResponse: TopResponse? = call.body()
 
                 runOnUiThread {
                     if (call.isSuccessful) {
-                        println("itwas succesfull")
                         activityResponse?.let { it1 ->
-                            println(it1?.query_data?.id)
                             if (!activityResponse.content.isNullOrEmpty()) {
-                                it1?.content?.forEach {
+                                it1.content.forEach {
                                     if (it.type == "ITEM"){
                                         cont =1
                                         items = items + it.id + ","
@@ -106,42 +101,9 @@ class MainActivity : AppCompatActivity() , SearchView.OnQueryTextListener{
         }
     }
 
-    fun makeCallItems() {
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                println(items)
-                val call: Response<List<ItemDetailsResponseItem>> =
-                    ApiClient.getRetrofit().create(ProductService::class.java)
-                        .getProductList(items)
-
-
-                val activityResponse: List<ItemDetailsResponseItem>? = call.body()
-
-                runOnUiThread {
-                    if (call.isSuccessful) {
-                        println("items it was succesfull")
-                        activityResponse?.let { it1 ->
-                            //println(it1.get(0).body.title)
-                            if (!activityResponse.isNullOrEmpty()) {
-                                it1.forEach {
-                                    println("tituli del producto")
-                                    println(it.body.title)
-                                }
-                            } else
-                                showErrorMessage()
-
-                        }
-                    } else
-                        showErrorMessage()
-                }
-            } catch (e: IOException) {
-                showErrorMessage(connectionFail = true)
-            }
-        }
-    }
 
     private fun showErrorMessage(connectionFail: Boolean = false) {
-        var message = "not found"
+        var message = "Ningun  item dado para la categoria fue encontrado"
         if (connectionFail) {
             message = "not internet"
         }

@@ -31,22 +31,4 @@ class ApiClient {
         }
     }
 
-    /**
-     *
-
-    private var retrofit: Retrofit? = null
-
-    fun getClient(): Retrofit? {
-
-    val interceptor = HttpLoggingInterceptor()
-    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-    val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
-    val retrofit = Retrofit.Builder()
-    .baseUrl("http://ws.audioscrobbler.com")
-    .client(client)
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-    return retrofit
-    }*/
-
 }
